@@ -76,3 +76,4 @@ crashlytics-build.properties
 /Assets/_ExampleAssets
 /Assets/_Samples/Universal RP
 *.meta
+/Assets/Scripts/Class1.cs
