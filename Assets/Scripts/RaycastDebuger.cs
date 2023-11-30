@@ -29,7 +29,7 @@ public class RaycastDebuger : MonoBehaviour
                     debugStr.AppendLine("Raycast hit a UI element");
                 }
 
-                if (arRaycasterManager.Raycast(touchPos, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
+                if (arRaycasterManager.Raycast(touchPos, hits))
                 {
                     foreach (var hit in hits)
                     {
