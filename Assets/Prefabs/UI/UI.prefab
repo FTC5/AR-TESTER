@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 817652397623502956}
   - component: {fileID: 7066971294011955831}
   - component: {fileID: 6771027955577114327}
+  - component: {fileID: 9146106464850733750}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -325,6 +326,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 32
+--- !u!114 &9146106464850733750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5360960792617287239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &7884057325787727653
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +815,7 @@ PrefabInstance:
     - target: {fileID: 3945730908998656387, guid: 40c0d347eea01dd478f52cdfe2d58a00,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
