@@ -18,13 +18,13 @@ public class SelectObjectMenuContentController : MonoBehaviour
 
     private void addContent()
     {
-        
-        foreach (var obj in objectsPrefab) 
+
+        foreach (var obj in objectsPrefab)
         {
             var selectableObject = Instantiate(selectObjectPrefab, gameObject.transform);
             var parentComponent = getParentComponentForObjectsPrefab(selectableObject.transform);
 
-            if(parentComponent != null)
+            if (parentComponent != null)
             {
                 GameObject newObject = Instantiate(obj, parentComponent);
                 newObject.transform.localScale = new Vector3(defaultScale, defaultScale, defaultScale);
@@ -35,7 +35,7 @@ public class SelectObjectMenuContentController : MonoBehaviour
     private Transform getParentComponentForObjectsPrefab(Transform selectableObject)
     {
         var childTransforms = selectableObject.GetComponentsInChildren<Transform>();
-        
+
         if (childTransforms.Length > 0)
         {
             foreach (var childTransform in childTransforms)

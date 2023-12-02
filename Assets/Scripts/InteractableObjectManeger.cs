@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.AR;
 
@@ -24,7 +23,7 @@ public class InteractableObjectManeger : MonoBehaviour
 
     public void ChangePlacementARObject(Transform placementARObject)
     {
-        if(placementARObject != null)
+        if (placementARObject != null)
         {
             GameObject newChildObject = Instantiate(placementARObject.gameObject, placementPrefab.transform);
             newChildObject.transform.localPosition = Vector3.zero;

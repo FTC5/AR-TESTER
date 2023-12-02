@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PreferencesButtonClick : MonoBehaviour
@@ -9,7 +7,7 @@ public class PreferencesButtonClick : MonoBehaviour
 
     public void OpenCloseMenu()
     {
-        if(preferencesSettings.IsActiveMenu)
+        if (preferencesSettings.IsActiveMenu)
         {
             closeMenu();
         }
