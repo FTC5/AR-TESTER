@@ -1085,6 +1085,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1188301921463361161, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_XROrigin
+      value: 
+      objectReference: {fileID: 601440628}
+    - target: {fileID: 1188301921463361161, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 2057687977}
+    - target: {fileID: 3324954963493643278, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_XROrigin
+      value: 
+      objectReference: {fileID: 601440628}
+    - target: {fileID: 3324954963493643278, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 2057687977}
     - target: {fileID: 3463187525533908254, guid: f1441b4faa2d3d845b6acb9aa47e409c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1165,6 +1185,11 @@ PrefabInstance:
     - target: {fileID: 932509056837723439, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: arRaycasterManager
+      value: 
+      objectReference: {fileID: 601440630}
+    - target: {fileID: 3149810982624264664, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: arRaycastManager
       value: 
       objectReference: {fileID: 601440630}
     - target: {fileID: 3546108458436536298, guid: 9902b3d318614744fac3aceb6c177c5d,
