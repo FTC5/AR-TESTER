@@ -12,6 +12,18 @@ public class ARGestureInteractorLog : MonoBehaviour
         arGestureInteractor.dragGestureRecognizer.onGestureStarted += DragGestureRecognizerStarted;
         arGestureInteractor.pinchGestureRecognizer.onGestureStarted += PinchGestureRecognizerStarted;
         arGestureInteractor.twoFingerDragGestureRecognizer.onGestureStarted += TwoFingerDragGestureRecognizerStar;
+        arGestureInteractor.onSelectEntered.AddListener((interactable) =>
+        {
+            Logger.Instance.LogInfo("on select");
+        });
+        //arGestureInteractor.firstInteractableSelected.selectEntered.AddListener(
+        //    (sEvent) => 
+        //    { 
+        //        Logger.Instance.LogInfo("select entered");
+        //        Logger.Instance.LogInfo(sEvent.interactableObject.transform.name);
+        //        Logger.Instance.LogInfo(sEvent.interactorObject.transform.name);
+        //    }
+        //);
     }
 
     private void DragGestureRecognizerStarted(DragGesture dragGesture)
