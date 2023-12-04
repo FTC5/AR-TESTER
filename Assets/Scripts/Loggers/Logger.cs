@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class Logger : Singleton<Logger>
 { 
+    public enum LogLevel
+    {
+        Info, Warn, Error
+    }
     [SerializeField]
     private TextMeshProUGUI debugAreaText;
     [SerializeField]
     private bool enableDebug = false;
     [SerializeField]
     private int maxLines = 15;
+    [SerializeField]
+    private LogLevel[] logLevels = new LogLevel[] { LogLevel.Warn, LogLevel.Error };
     private static Logger _instance;
 
     private Logger()
@@ -27,21 +33,26 @@ public class Logger : Singleton<Logger>
 
     public void LogInfo(string message)
     {
-        logMessage($"{DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss")}<color=\"white\">{message}</color>\n");
+        logMessage($"{DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss")}<color=\"white\">{message}</color>\n", LogLevel.Info);
     }
 
     public void LogError(string message)
     {
-        logMessage($"{DateTime.Now.ToString("yyyy-dd-M--HH-am-ss")}<color=\"red\">{message}</color>\n");
+        logMessage($"{DateTime.Now.ToString("yyyy-dd-M--HH-am-ss")}<color=\"red\">{message}</color>\n", LogLevel.Warn);
     }
 
     public void LogWarning(string message)
     {
-        logMessage($"{DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss")}<color=\"yellow\">{message}</color>\n");
+        logMessage($"{DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss")}<color=\"yellow\">{message}</color>\n", LogLevel.Error);
     }
 
-    private void logMessage(string formatMessage)
+    private void logMessage(string formatMessage, LogLevel logLevel)
     {
+        if(logLevels.Contains(logLevel)) 
+        {
+            return;
+        }
+
         if(enableDebug && debugAreaText != null)
         {
             clearLines();

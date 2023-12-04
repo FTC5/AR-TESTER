@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.AR;
 
@@ -24,6 +25,13 @@ public class ARGestureInteractorLog : MonoBehaviour
         //        Logger.Instance.LogInfo(sEvent.interactorObject.transform.name);
         //    }
         //);
+    }
+
+    void OnDisable()
+    {
+        arGestureInteractor.dragGestureRecognizer.onGestureStarted -= DragGestureRecognizerStarted;
+        arGestureInteractor.pinchGestureRecognizer.onGestureStarted -= PinchGestureRecognizerStarted;
+        arGestureInteractor.twoFingerDragGestureRecognizer.onGestureStarted -= TwoFingerDragGestureRecognizerStar;
     }
 
     private void DragGestureRecognizerStarted(DragGesture dragGesture)

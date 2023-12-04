@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3622325643993204775}
   - component: {fileID: 1929697660017319302}
   m_Layer: 6
-  m_Name: Text (TMP)
+  m_Name: InfoText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -669,6 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 26694923982506065}
   - component: {fileID: 6574861418476519620}
+  - component: {fileID: 121213368897366152}
   m_Layer: 6
   m_Name: LogInfo
   m_TagString: Untagged
@@ -711,6 +712,21 @@ MonoBehaviour:
   debugAreaText: {fileID: 1929697660017319302}
   enableDebug: 0
   maxLines: 25
+  logLevels: 0100000002000000
+  logWarning: 1
+  logError: 1
+--- !u!114 &121213368897366152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252439544322412444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be12b91a95a1cd145b2e21ca80cff1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8593498340659984796
 GameObject:
   m_ObjectHideFlags: 0
