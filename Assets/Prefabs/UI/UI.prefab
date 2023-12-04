@@ -711,10 +711,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugAreaText: {fileID: 1929697660017319302}
   enableDebug: 0
-  maxLines: 25
+  maxLines: 5
   logLevels: 0100000002000000
-  logWarning: 1
-  logError: 1
 --- !u!114 &121213368897366152
 MonoBehaviour:
   m_ObjectHideFlags: 0
