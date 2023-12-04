@@ -48,7 +48,7 @@ public class Logger : Singleton<Logger>
 
     private void logMessage(string formatMessage, LogLevel logLevel)
     {
-        if(logLevels.Contains(logLevel)) 
+        if(!logLevels.Contains(logLevel)) 
         {
             return;
         }
