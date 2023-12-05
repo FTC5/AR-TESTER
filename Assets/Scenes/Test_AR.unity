@@ -1205,6 +1205,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -60.67993
       objectReference: {fileID: 0}
+    - target: {fileID: 923838068577219280, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: arGestureInteractor
+      value: 
+      objectReference: {fileID: 596403076}
     - target: {fileID: 932509056837723439, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: arRaycasterManager
@@ -1295,6 +1300,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5610112058351241778, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610112058351241778, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610112058351241778, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6230975791631252153, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1345,6 +1365,16 @@ PrefabInstance:
       propertyPath: arRaycasterManager
       value: 
       objectReference: {fileID: 601440630}
+    - target: {fileID: 8824534632258917470, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824534632258917470, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0013704265
+      objectReference: {fileID: 0}
     - target: {fileID: 8869930286048231428, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_Name
