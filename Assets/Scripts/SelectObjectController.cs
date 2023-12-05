@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SelectObjectController : MonoBehaviour
 {
-    private InteractableObjectManeger interactableObjectManeger;
+    private IInteractableObjectManeger interactableObjectManeger;
     private string aRPlacementInteractableTag = "ARPlacementInteractable";
     private string aRObjectTag = "ARObject";
     // Start is called before the first frame update

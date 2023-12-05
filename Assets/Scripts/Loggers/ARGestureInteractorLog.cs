@@ -16,6 +16,7 @@ public class ARGestureInteractorLog : MonoBehaviour
         arGestureInteractor.onSelectEntered.AddListener((interactable) =>
         {
             Logger.Instance.LogInfo("on select");
+            Logger.Instance.LogInfo(interactable.name);
         });
         //arGestureInteractor.firstInteractableSelected.selectEntered.AddListener(
         //    (sEvent) => 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.AR;
 
-public class InteractableObjectManeger : MonoBehaviour
+public class InteractableObjectManeger : MonoBehaviour, IInteractableObjectManeger
 {
     [SerializeField]
     private ARPlacementInteractable aRPlacementInteractable;
