@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 596403077}
   - component: {fileID: 596403076}
   - component: {fileID: 596403078}
+  - component: {fileID: 596403079}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -602,6 +603,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdb152e498b77c846be816c1fa5c341e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &596403079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596403069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f83739f2b9d814589eadfcbe2e4182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &601440625
@@ -1204,6 +1217,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -60.67993
+      objectReference: {fileID: 0}
+    - target: {fileID: 494357702650128059, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 596403079}
+    - target: {fileID: 494357702650128059, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeleteSelectedObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 494357702650128059, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Assets.Scripts.SelectObjectManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 923838068577219280, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
