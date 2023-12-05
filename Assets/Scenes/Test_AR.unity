@@ -1315,6 +1315,16 @@ PrefabInstance:
       propertyPath: enableDebug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6574861418476519620, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: logLevels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574861418476519620, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: logLevels.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7049482757918467285, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_SizeDelta.x
