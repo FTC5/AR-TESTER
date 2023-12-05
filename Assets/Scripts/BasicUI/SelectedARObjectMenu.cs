@@ -21,8 +21,8 @@ namespace Assets.Scripts.BasicUI
             }
             else
             {
-                arGestureInteractor.onSelectEntered.AddListener(SelectEntered);
-                arGestureInteractor.onSelectExited.AddListener(SelectExited);
+                arGestureInteractor.selectEntered.AddListener(SelectEntered);
+                arGestureInteractor.selectExited.AddListener(SelectExited);
             }
         }
 
@@ -30,17 +30,17 @@ namespace Assets.Scripts.BasicUI
         {
             if (arGestureInteractor != null)
             {
-                arGestureInteractor.onSelectEntered.RemoveListener(SelectEntered);
-                arGestureInteractor.onSelectExited.RemoveListener(SelectExited);
+                arGestureInteractor.selectEntered.RemoveListener(SelectEntered);
+                arGestureInteractor.selectExited.RemoveListener(SelectExited);
             }
         }
 
-        void SelectEntered(XRBaseInteractable interactable)
+        void SelectEntered(SelectEnterEventArgs eventArgs)
         {
-            arObjectIsSelected = interactable != null;
+            arObjectIsSelected = eventArgs.interactableObject != null && eventArgs.interactableObject.isSelected;
         }
 
-        void SelectExited<XRBaseInteractable>(XRBaseInteractable interactable)
+        void SelectExited(SelectExitEventArgs eventArgs)
         {
             arObjectIsSelected = false;
         }

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.AR;
 
 namespace Assets.Scripts
@@ -7,30 +8,44 @@ namespace Assets.Scripts
     [RequireComponent(typeof(ARGestureInteractor))]
     public class SelectObjectManager : MonoBehaviour, ISelectObjectManager
     {
-        public bool IsSelectARObject { get; set; }
-
         private ARGestureInteractor arGestureInteractor;
         private GameObject selectedObject;
         private string arObjectTag = "ARObject";
 
-        void Start()
+        void OnEnable()
         {
             arGestureInteractor = GetComponent<ARGestureInteractor>();
-            arGestureInteractor.onSelectEntered.AddListener((interactable) =>
+            if (arGestureInteractor == null)
             {
-                IsSelectARObject = interactable != null;
-                if (IsSelectARObject)
-                {
-                    selectedObject = interactable.gameObject;
-                }
-
-            });
-
-            arGestureInteractor.onSelectExited.AddListener((interactable) =>
+                this.enabled = false;
+            }
+            else
             {
-                selectedObject = null;
-                IsSelectARObject = false;
-            });
+                arGestureInteractor.selectEntered.AddListener(SelectEntered);
+                arGestureInteractor.selectExited.AddListener(SelectExited);
+            }
+        }
+
+        void OnDisable()
+        {
+            if (arGestureInteractor != null)
+            {
+                arGestureInteractor.selectEntered.RemoveListener(SelectEntered);
+                arGestureInteractor.selectExited.RemoveListener(SelectExited);
+            }
+        }
+
+        void SelectEntered(SelectEnterEventArgs eventArgs)
+        {
+            if (eventArgs.interactableObject != null && eventArgs.interactableObject.isSelected)
+            {
+                selectedObject = eventArgs.interactableObject.transform.gameObject;
+            }
+        }
+
+        void SelectExited(SelectExitEventArgs eventArgs)
+        {
+            selectedObject = null;
         }
 
         public void DeleteSelectedObject()

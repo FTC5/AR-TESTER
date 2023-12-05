@@ -4,8 +4,6 @@ namespace Assets.Scripts
 {
     public interface ISelectObjectManager
     {
-        bool IsSelectARObject { get; set; }
-
         void AddToARObject(GameObject gameObject);
         void ChangeColor(Color color);
         void DeleteSelectedObject();
