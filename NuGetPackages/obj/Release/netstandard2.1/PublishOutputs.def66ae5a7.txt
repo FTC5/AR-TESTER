@@ -1,0 +1,4 @@
+D:\Project\Unity\AR TESTER\Assets\Plugins\NuGetPackages\NuGetPackages.dll
+D:\Project\Unity\AR TESTER\Assets\Plugins\NuGetPackages\NuGetPackages.deps.json
+D:\Project\Unity\AR TESTER\Assets\Plugins\NuGetPackages\NuGetPackages.pdb
+D:\Project\Unity\AR TESTER\Assets\Plugins\NuGetPackages\LiteDB.dll

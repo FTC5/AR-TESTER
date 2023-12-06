@@ -1,0 +1,10 @@
+D:\Project\Unity\AR TESTER\NuGetPackages\bin\Debug\netstandard2.1\NuGetPackages.deps.json
+D:\Project\Unity\AR TESTER\NuGetPackages\bin\Debug\netstandard2.1\NuGetPackages.dll
+D:\Project\Unity\AR TESTER\NuGetPackages\bin\Debug\netstandard2.1\NuGetPackages.pdb
+D:\Project\Unity\AR TESTER\NuGetPackages\obj\Debug\netstandard2.1\NuGetPackages.csproj.AssemblyReference.cache
+D:\Project\Unity\AR TESTER\NuGetPackages\obj\Debug\netstandard2.1\NuGetPackages.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Unity\AR TESTER\NuGetPackages\obj\Debug\netstandard2.1\NuGetPackages.AssemblyInfoInputs.cache
+D:\Project\Unity\AR TESTER\NuGetPackages\obj\Debug\netstandard2.1\NuGetPackages.AssemblyInfo.cs
+D:\Project\Unity\AR TESTER\NuGetPackages\obj\Debug\netstandard2.1\NuGetPackages.csproj.CoreCompileInputs.cache
+D:\Project\Unity\AR TESTER\NuGetPackages\obj\Debug\netstandard2.1\NuGetPackages.dll
+D:\Project\Unity\AR TESTER\NuGetPackages\obj\Debug\netstandard2.1\NuGetPackages.pdb
