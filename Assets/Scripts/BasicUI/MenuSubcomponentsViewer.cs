@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static IMenuSubcomponentsViewer;
 
 public class MenuSubcomponentsViewer : MonoBehaviour, IMenuSubcomponentsViewer
 {
@@ -9,18 +10,25 @@ public class MenuSubcomponentsViewer : MonoBehaviour, IMenuSubcomponentsViewer
     private List<GameObject> activeComponent;
     // Start is called before the first frame update
 
-    public void HideElements()
+    public void HideElements(ElementType type = ElementType.All)
     {
-        setComponentsActive(hiddenComponent);
-        setComponentsActive(activeComponent);
+        if (type == ElementType.All || type == ElementType.DefaultHidden)
+        {
+            setComponentsActive(hiddenComponent, false);
+        }
+
+        if (type == ElementType.All || type == ElementType.DefaultActive)
+        {
+            setComponentsActive(activeComponent, false);
+        }
     }
 
     public void ActivateElements()
     {
-        setComponentsActive(activeComponent, true);
+        setComponentsActive(activeComponent);
     }
 
-    private void setComponentsActive(List<GameObject> components, bool isActive = false)
+    private void setComponentsActive(List<GameObject> components, bool isActive = true)
     {
         if (components == null)
         {

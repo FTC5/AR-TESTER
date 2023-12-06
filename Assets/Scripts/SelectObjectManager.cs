@@ -8,8 +8,11 @@ namespace Assets.Scripts
     [RequireComponent(typeof(ARGestureInteractor))]
     public class SelectObjectManager : MonoBehaviour, ISelectObjectManager
     {
+        [SerializeField]
+        private ColorPicker colorPicker;
         private ARGestureInteractor arGestureInteractor;
         private GameObject selectedObject;
+        private Transform selectedARObject;
         private string arObjectTag = "ARObject";
 
         void OnEnable()
@@ -24,6 +27,11 @@ namespace Assets.Scripts
                 arGestureInteractor.selectEntered.AddListener(SelectEntered);
                 arGestureInteractor.selectExited.AddListener(SelectExited);
             }
+
+            if (colorPicker != null)
+            {
+                colorPicker.onColorChanged += ChangeColor;
+            }
         }
 
         void OnDisable()
@@ -33,6 +41,11 @@ namespace Assets.Scripts
                 arGestureInteractor.selectEntered.RemoveListener(SelectEntered);
                 arGestureInteractor.selectExited.RemoveListener(SelectExited);
             }
+
+            if (colorPicker != null)
+            {
+                colorPicker.onColorChanged -= ChangeColor;
+            }
         }
 
         void SelectEntered(SelectEnterEventArgs eventArgs)
@@ -40,6 +53,10 @@ namespace Assets.Scripts
             if (eventArgs.interactableObject != null && eventArgs.interactableObject.isSelected)
             {
                 selectedObject = eventArgs.interactableObject.transform.gameObject;
+                selectedARObject = selectedObject.transform.GetComponentsInChildren<Transform>().FirstOrDefault(child => child.tag == arObjectTag);
+
+                if (selectedARObject == null)
+                    Logger.Instance.LogInfo("Selected AR Object " + selectedARObject.name);
             }
         }
 
@@ -60,11 +77,9 @@ namespace Assets.Scripts
         {
             if (selectedObject != null)
             {
-                var arObject = selectedObject.transform.GetComponentsInChildren<Transform>().FirstOrDefault(child => child.tag == arObjectTag);
-
-                if (arObject != null)
+                if (selectedARObject != null)
                 {
-                    arObject.GetComponent<MeshRenderer>().material.color = color;
+                    selectedARObject.GetComponent<MeshRenderer>().material.color = color;
                 }
             }
         }

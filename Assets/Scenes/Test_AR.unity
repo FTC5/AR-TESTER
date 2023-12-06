@@ -617,6 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f83739f2b9d814589eadfcbe2e4182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorPicker: {fileID: 1396863634}
 --- !u!1 &601440625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1046,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b91e518cb78d64a8228a9a91cf99dd, type: 3}
+--- !u!114 &1396863634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4931662191647498499, guid: 9902b3d318614744fac3aceb6c177c5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6906370767124446955}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245b0386e12fd504aa5c8bea2bfb0338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1459017494 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5048571039644753755, guid: 9902b3d318614744fac3aceb6c177c5d,
@@ -1216,7 +1229,7 @@ PrefabInstance:
     - target: {fileID: 26694923982506065, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60.67993
+      value: -60.679993
       objectReference: {fileID: 0}
     - target: {fileID: 494357702650128059, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
@@ -1243,11 +1256,31 @@ PrefabInstance:
       propertyPath: arRaycasterManager
       value: 
       objectReference: {fileID: 601440630}
+    - target: {fileID: 2974748722067873787, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974748722067873787, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3149810982624264664, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: arRaycastManager
       value: 
       objectReference: {fileID: 601440630}
+    - target: {fileID: 3245938876046602528, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.427765
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245938876046602528, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16.223083
+      objectReference: {fileID: 0}
     - target: {fileID: 3546108458436536298, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1372,6 +1405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: logLevels.Array.data[2]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818030758474846312, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 283.98395
       objectReference: {fileID: 0}
     - target: {fileID: 7049482757918467285, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
