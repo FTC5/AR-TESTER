@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8511809695975335295}
   - component: {fileID: 124551581089041201}
   - component: {fileID: 4430989074521882075}
+  - component: {fileID: 8239107464964737087}
   m_Layer: 3
   m_Name: AR Cylinder
   m_TagString: ARObject
@@ -107,3 +108,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &8239107464964737087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582160540288319912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b69a038f7efbd8498bbcab3fbd3ac15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SourceNameARObject: 

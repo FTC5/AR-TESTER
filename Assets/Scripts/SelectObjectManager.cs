@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using LiteDB;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.AR;
@@ -10,7 +11,10 @@ namespace Assets.Scripts
     {
         [SerializeField]
         private ColorPicker colorPicker;
+        [SerializeField]
+        SelectObjectMenuContentController selectObjectMenu;
         private ARGestureInteractor arGestureInteractor;
+        [SerializeField]
         private GameObject selectedObject;
         private Transform selectedARObject;
         private string arObjectTag = "ARObject";
@@ -86,13 +90,20 @@ namespace Assets.Scripts
 
         public void SaveARObject()
         {
-            if (selectedObject != null)
-            {
-                var arObject = selectedObject.transform.GetComponentsInChildren<Transform>().FirstOrDefault(child => child.tag == arObjectTag);
+            var arObject = selectedObject.transform.GetComponentsInChildren<Transform>().FirstOrDefault(child => child.tag == arObjectTag);
 
+            if (arObject != null)
+            {
                 if (arObject != null)
                 {
+                    var arGameObjects = new ARGameObjectSaveData(arObject).GetAll();
+                    using (var db = new LiteDatabase(@$"{Application.persistentDataPath}/ARObject.db"))
+                    {
+                        var ARGameObjects = db.GetCollection<ARGameObjectSaveData>("ARGameObjects");
+                        ARGameObjects.Insert(arGameObjects);
+                    }
 
+                    selectObjectMenu.AddContent(arObject.gameObject);
                 }
             }
         }

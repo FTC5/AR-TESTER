@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5406843495440384599}
   - component: {fileID: 7320082430497214966}
   - component: {fileID: 7558471812382292192}
+  - component: {fileID: 7528512809542515925}
   m_Layer: 3
   m_Name: AR Default Plane T1
   m_TagString: ARObject
@@ -241,3 +242,16 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 1
   m_ApplyActiveColorSpace: 0
+--- !u!114 &7528512809542515925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848905483941797919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b69a038f7efbd8498bbcab3fbd3ac15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SourceNameARObject: 
