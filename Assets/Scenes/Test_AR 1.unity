@@ -565,7 +565,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras:
-  - {fileID: 1459017494}
+  - {fileID: 838179369}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -714,6 +714,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RaycastPrefab: {fileID: 0}
+--- !u!1001 &838179368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2397868398655510100, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: far clip plane
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397868398655510100, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215277598708886583, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_Name
+      value: UIXR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283238858885717282, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e6330e943e1c2a4b8a19565874ca93d, type: 3}
+--- !u!20 &838179369 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2397868398655510100, guid: 7e6330e943e1c2a4b8a19565874ca93d,
+    type: 3}
+  m_PrefabInstance: {fileID: 838179368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &851392075 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4052204675762344309, guid: f1441b4faa2d3d845b6acb9aa47e409c,
@@ -731,6 +815,8 @@ GameObject:
   - component: {fileID: 950414723}
   - component: {fileID: 950414722}
   - component: {fileID: 950414724}
+  - component: {fileID: 950414726}
+  - component: {fileID: 950414725}
   m_Layer: 0
   m_Name: AR Placement Interactable
   m_TagString: ARPlacementInteractable
@@ -811,9 +897,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_StartingHoverFilters:
-  - {fileID: 0}
+  - {fileID: 950414726}
   m_StartingSelectFilters:
-  - {fileID: 0}
+  - {fileID: 950414725}
   m_StartingInteractionStrengthFilters: []
   m_OnFirstHoverEntered:
     m_PersistentCalls:
@@ -885,6 +971,30 @@ MonoBehaviour:
   aRPlacementInteractable: {fileID: 950414722}
   placementPrefab: {fileID: 851392075}
   defaultPlacementARObject: {fileID: 1785266737}
+--- !u!114 &950414725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950414721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc9256bb0e6b2c45a1139d640a4945e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &950414726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950414721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bab695d4773d6469c7e03c5010803f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1167446570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,12 +1172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245b0386e12fd504aa5c8bea2bfb0338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!20 &1459017494 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 5048571039644753755, guid: 9902b3d318614744fac3aceb6c177c5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6906370767124446955}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1785266737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6904359828081452450, guid: d9b91e518cb78d64a8228a9a91cf99dd,
@@ -1550,7 +1654,7 @@ PrefabInstance:
     - target: {fileID: 8869930286048231428, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9146106464850733750, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
@@ -1574,3 +1678,4 @@ SceneRoots:
   - {fileID: 950414723}
   - {fileID: 2137008597}
   - {fileID: 6906370767124446955}
+  - {fileID: 838179368}

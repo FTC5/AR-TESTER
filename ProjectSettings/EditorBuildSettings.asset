@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AR_Portal.unity
     guid: cf13336110baf804697204a4c1ffb062
+  - enabled: 0
+    path: Assets/Scenes/Test_AR 1.unity
+    guid: 8c0ed9bb4cd880042ac9ba95669a6ce5
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
