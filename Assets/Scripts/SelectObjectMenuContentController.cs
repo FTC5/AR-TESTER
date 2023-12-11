@@ -35,7 +35,7 @@ public class SelectObjectMenuContentController : MonoBehaviour
                 arGameObject.SourceName = arObject.name;
             }
 
-            newObject.transform.localScale = new Vector3(defaultScale, defaultScale, defaultScale);
+            setGameObjectScale(parentComponent.GetComponent<RectTransform>(), newObject);
         }
     }
 
@@ -60,7 +60,8 @@ public class SelectObjectMenuContentController : MonoBehaviour
 
                 if (parentComponent != null)
                 {
-                    initSaveGameObject(parentComponent, savedGameObject[i]);
+                    var newGameObject = initSaveGameObject(parentComponent, savedGameObject[i]);
+                    setGameObjectScale(parentComponent.GetComponent<RectTransform>(), newGameObject, true);
                 }
 
                 savedGameObject.RemoveAt(i);
@@ -68,48 +69,47 @@ public class SelectObjectMenuContentController : MonoBehaviour
         }
     }
 
-    private void initSaveGameObject(Transform parentComponent, ARGameObjectSaveData savedGameObject)
+    private GameObject initSaveGameObject(Transform parentComponent, ARGameObjectSaveData savedGameObject)
     {
-        if (parentComponent != null)
+        var prefab = objectsPrefab.FirstOrDefault(obj => obj.name == savedGameObject.SourceName);
+
+        if (prefab == null)
         {
-            var prefab = objectsPrefab.FirstOrDefault(obj => obj.name == savedGameObject.SourceName);
-
-            if (prefab == null)
-            {
-                prefab = new GameObject(string.Empty);
-            }
-
-            GameObject newObject = Instantiate(prefab, parentComponent);
-            var arGameObject = newObject.GetComponent<ARGameObject>();
-
-            if (arGameObject != null)
-            {
-                arGameObject.SourceName = savedGameObject.SourceName;
-            }
-
-            if (savedGameObject.ParentID == Guid.Empty)
-            {
-                newObject.transform.localScale = new Vector3(defaultScale, defaultScale, defaultScale);
-            }
-            else
-            {
-                newObject.transform.localScale = new Vector3(savedGameObject.Scale[0], savedGameObject.Scale[1], savedGameObject.Scale[2]);
-                newObject.transform.localPosition = new Vector3(savedGameObject.Position[0], savedGameObject.Position[1], savedGameObject.Position[2]);
-                newObject.transform.localRotation = new Quaternion(savedGameObject.Rotation[0], savedGameObject.Rotation[1], savedGameObject.Rotation[2], savedGameObject.Rotation[3]);
-            }
-
-            var meshRender = newObject.GetComponent<MeshRenderer>();
-
-            if (meshRender != null)
-            {
-                meshRender.material.color = new Color(savedGameObject.Color[0], savedGameObject.Color[1], savedGameObject.Color[1]);
-            }
-
-            foreach (var item in savedGameObject.chields)
-            {
-                initSaveGameObject(newObject.transform, item);
-            }
+            prefab = new GameObject(string.Empty);
         }
+
+        GameObject newObject = Instantiate(prefab, parentComponent);
+        var arGameObject = newObject.GetComponent<ARGameObject>();
+
+        if (arGameObject != null)
+        {
+            arGameObject.SourceName = savedGameObject.SourceName;
+        }
+
+        if (savedGameObject.ParentID == Guid.Empty)
+        {
+            newObject.transform.localScale = new Vector3(defaultScale, defaultScale, defaultScale);
+        }
+        else
+        {
+            newObject.transform.localScale = new Vector3(savedGameObject.Scale[0], savedGameObject.Scale[1], savedGameObject.Scale[2]);
+            newObject.transform.localPosition = new Vector3(savedGameObject.Position[0], savedGameObject.Position[1], savedGameObject.Position[2]);
+            newObject.transform.localRotation = new Quaternion(savedGameObject.Rotation[0], savedGameObject.Rotation[1], savedGameObject.Rotation[2], savedGameObject.Rotation[3]);
+        }
+
+        var meshRender = newObject.GetComponent<MeshRenderer>();
+
+        if (meshRender != null)
+        {
+            meshRender.material.color = new Color(savedGameObject.Color[0], savedGameObject.Color[1], savedGameObject.Color[1]);
+        }
+
+        foreach (var item in savedGameObject.chields)
+        {
+            initSaveGameObject(newObject.transform, item);
+        }
+
+        return newObject;
     }
 
     private Transform getParentComponentForObjectsPrefab(Transform selectableObject)
@@ -157,4 +157,47 @@ public class SelectObjectMenuContentController : MonoBehaviour
 
         return arMainGameObjects;
     }
+
+    private void setGameObjectScale(RectTransform parentComponent, GameObject gameObject, bool isCompositeObject = false)
+    {
+        gameObject.transform.localScale = Vector3.one;
+
+        // Convert panel size from screen space to world space
+        Vector2 panelSize = Vector2.Scale(parentComponent.rect.size, new Vector2(parentComponent.lossyScale.x, parentComponent.lossyScale.y));
+
+        // Get the bounds of the object
+        Bounds bounds;
+        if (isCompositeObject)
+        {
+            bounds = calculateCompositeBounds(gameObject);
+        }
+        else
+        {
+            Renderer objectRenderer = gameObject.GetComponent<Renderer>();
+            bounds = objectRenderer.bounds;
+        }
+
+
+        // Calculate the scaling factor for each dimension
+        float scaleX = panelSize.x / bounds.size.x;
+        float scaleY = panelSize.y / bounds.size.y;
+        float scale = Mathf.Min(scaleX, scaleY); // Use the smallest scale factor
+
+        // Apply the scaling
+        gameObject.transform.localScale *= scale;
+        gameObject.transform.localScale *= 0.8f;
+    }
+    Bounds calculateCompositeBounds(GameObject compositeObject)
+    {
+        Renderer[] childRenderers = compositeObject.GetComponentsInChildren<Renderer>();
+        if (childRenderers.Length == 0) return new Bounds(compositeObject.transform.position, Vector3.zero);
+
+        Bounds bounds = childRenderers[0].bounds;
+        foreach (Renderer renderer in childRenderers)
+        {
+            bounds.Encapsulate(renderer.bounds);
+        }
+        return bounds;
+    }
 }
+

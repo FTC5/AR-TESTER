@@ -13,12 +13,12 @@ public class SubMenuViewButton : MonoBehaviour
     {
         if (subMenu != null)
         {
-            if (!subMenu.activeInHierarchy && subcomponentsViewer != null)
+            if (!subMenu.activeSelf && subcomponentsViewer != null)
             {
                 subcomponentsViewer.HideElements(IMenuSubcomponentsViewer.ElementType.DefaultHidden);
             }
 
-            subMenu.SetActive(!subMenu.activeInHierarchy);
+            subMenu.SetActive(!subMenu.activeSelf);
         }
     }
 
