@@ -7,25 +7,20 @@ public class PreferencesButtonViewController : MonoBehaviour
     public float disappearTime = 3.0f;
     [SerializeField]
     private Image imageComponent;
-    private bool isFadeIn = false;
+    [SerializeField]
+    private Menu preferencesSettings;
 
     // Update is called once per frame
     void Update()
     {
-        //if (!preferencesSettings.IsActiveMenu && !isFadeIn)
-        //{
-        //    fadeIn();
-        //    isFadeIn = true;
-        //}
-        //else if (preferencesSettings.IsActiveMenu && isFadeIn)
-        //{
-        //    imageComponent.CrossFadeAlpha(1f, 0.1f, false);
-        //    isFadeIn = false;
-        //}
+        if (!preferencesSettings.IsActiveMenu && isNotFadeIn())
+        {
+            imageComponent.CrossFadeAlpha(.0f, disappearTime, false);
+        }
     }
 
-    private void fadeIn()
+    private bool isNotFadeIn()
     {
-        //imageComponent.CrossFadeAlpha(.0f, disappearTime, false);
+        return imageComponent.canvasRenderer.GetAlpha() > .0f;
     }
 }
