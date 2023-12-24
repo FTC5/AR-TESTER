@@ -250,7 +250,7 @@ MonoBehaviour:
   m_ExcludeUITouches: 1
   m_ARSessionOrigin: {fileID: 0}
   m_ObjectGestureTranslationMode: 2
-  m_MaxTranslationDistance: 10
+  m_MaxTranslationDistance: 20
   m_FallbackLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_ExcludeUITouches: 1
   m_ARSessionOrigin: {fileID: 0}
   m_MinScale: 0.75
-  m_MaxScale: 1.25
+  m_MaxScale: 10.25
   m_ElasticRatioLimit: 0
   m_Sensitivity: 0.75
   m_Elasticity: 0.15
@@ -504,7 +504,7 @@ PrefabInstance:
     - target: {fileID: 3401351073621943996, guid: f0ffb12dead2dc24b8644448ae472948,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3401351073621943996, guid: f0ffb12dead2dc24b8644448ae472948,
         type: 3}

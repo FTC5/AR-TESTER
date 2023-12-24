@@ -1,4 +1,6 @@
-﻿using LiteDB;
+﻿using Assets.Scripts.BasicUI;
+using LiteDB;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -11,6 +13,8 @@ namespace Assets.Scripts
     {
         [SerializeField]
         private ColorPicker colorPicker;
+        [SerializeField]
+        private List<YPosLongButton> YPosBtn = new List<YPosLongButton>();
         [SerializeField]
         SelectObjectMenuContentController selectObjectMenu;
         private ARGestureInteractor arGestureInteractor;
@@ -35,6 +39,11 @@ namespace Assets.Scripts
             if (colorPicker != null)
             {
                 colorPicker.onColorChanged += ChangeColor;
+            }
+
+            foreach (var button in YPosBtn)
+            {
+                button.onYPosChanged += ChangeYPos;
             }
         }
 
@@ -86,6 +95,13 @@ namespace Assets.Scripts
                     selectedARObject.GetComponent<MeshRenderer>().material.color = color;
                 }
             }
+        }
+
+        public void ChangeYPos(float moveDistance)
+        {
+            Vector3 newPosition = selectedObject.transform.position;
+            newPosition.y += moveDistance;
+            selectedObject.transform.position = newPosition;
         }
 
         public void SaveARObject()
