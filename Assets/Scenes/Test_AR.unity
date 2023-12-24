@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorPicker: {fileID: 1396863634}
   selectObjectMenu: {fileID: 2130046346}
-  IsMultiSelect: 1
+  selectedObject: {fileID: 0}
 --- !u!1 &601440625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,6 +2763,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829994500383927769, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829994500383927769, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829994500383927769, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829994500383927769, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829994500383927769, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -6,7 +6,6 @@ public class Menu : MonoBehaviour
 {
     IMenuSubcomponentsViewer subcomponentsViewer;
     public bool IsActiveMenu { get; set; }
-    // Start is called before the first frame update
 
     void Start()
     {

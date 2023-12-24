@@ -8,7 +8,6 @@ public class MenuSubcomponentsViewer : MonoBehaviour, IMenuSubcomponentsViewer
     private List<GameObject> hiddenComponent;
     [SerializeField]
     private List<GameObject> activeComponent;
-    // Start is called before the first frame update
 
     public void HideElements(ElementType type = ElementType.All)
     {
