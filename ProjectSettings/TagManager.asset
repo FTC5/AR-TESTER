@@ -8,6 +8,8 @@ TagManager:
   - ParentObject
   - ARPlacementInteractable
   - ARObject
+  - Selection
+  - Multi-selection
   layers:
   - Default
   - TransparentFX

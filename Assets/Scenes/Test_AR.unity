@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorPicker: {fileID: 1396863634}
   selectObjectMenu: {fileID: 2130046346}
-  selectedObject: {fileID: 0}
+  IsMultiSelect: 1
 --- !u!1 &601440625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2671,16 @@ PrefabInstance:
       objectReference: {fileID: 601440628}
     - target: {fileID: 3324954963493643278, guid: f1441b4faa2d3d845b6acb9aa47e409c,
         type: 3}
+      propertyPath: m_FocusMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324954963493643278, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
+      propertyPath: m_SelectMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324954963493643278, guid: f1441b4faa2d3d845b6acb9aa47e409c,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 0}
@@ -3201,6 +3211,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12378919916188605, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 596403079}
+    - target: {fileID: 12378919916188605, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMultiSelectMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 12378919916188605, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Assets.Scripts.SelectObjectManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 26694923982506065, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3209,7 +3234,7 @@ PrefabInstance:
     - target: {fileID: 26694923982506065, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60.679977
+      value: -60.679993
       objectReference: {fileID: 0}
     - target: {fileID: 494357702650128059, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
@@ -3324,6 +3349,11 @@ PrefabInstance:
       propertyPath: arRaycasterManager
       value: 
       objectReference: {fileID: 601440630}
+    - target: {fileID: 1242514390680187481, guid: 9902b3d318614744fac3aceb6c177c5d,
+        type: 3}
+      propertyPath: arPlaneManager
+      value: 
+      objectReference: {fileID: 601440626}
     - target: {fileID: 1463237726408431631, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_Enabled
@@ -3567,7 +3597,7 @@ PrefabInstance:
     - target: {fileID: 8252439544322412444, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8671916094380039362, guid: 9902b3d318614744fac3aceb6c177c5d,
         type: 3}
@@ -3601,6 +3631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 583180260923064257, guid: 9902b3d318614744fac3aceb6c177c5d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
