@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5277044866642548857}
   - component: {fileID: 8151115337516495605}
   - component: {fileID: -522432997202332429}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Patio_table_unity
-  m_TagString: Untagged
+  m_TagString: ARObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
